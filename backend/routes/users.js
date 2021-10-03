@@ -8,7 +8,6 @@ router.post("/register", async (req, res) => {
   try {
     let { email, password, passwordCheck, displayName } = req.body;
 
-    // validate
 
     if (!email || !password || !passwordCheck)
       return res.status(400).json({ msg: "Not all fields have been entered." });
@@ -48,7 +47,6 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // validate
     if (!email || !password)
       return res.status(400).json({ msg: "Not all fields have been entered." });
 
@@ -75,15 +73,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
-router.delete("/delete", auth, async (req, res) => {
-  try {
-    const deletedUser = await User.findByIdAndDelete(req.user);
-    res.json(deletedUser);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 router.post("/tokenIsValid", async (req, res) => {
   try {

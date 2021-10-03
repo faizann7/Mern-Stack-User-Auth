@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../context/userContext";
 import ErrorNotice from "../../components/misc/ErrorNotice";
@@ -54,7 +54,7 @@ function Login () {
 
                 <button type="submit" className="btn btn-primary btn-block">Log In</button>
                 <p className="forgot-password text-right">
-                    Already have an account?
+                    Don't have an account? Make one! <Link to="/register">Sign Up</Link>
                 </p>
             </form>
             

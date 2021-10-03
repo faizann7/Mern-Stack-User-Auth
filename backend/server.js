@@ -21,4 +21,3 @@ mongoose.connect( process.env.MONGODB_CONNECTION_STRING, {
 );
 
 app.use("/users", require("./routes/users"));
-// app.use("/todos", require("./routes/todo"));

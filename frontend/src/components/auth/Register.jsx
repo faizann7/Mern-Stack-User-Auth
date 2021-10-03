@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../context/userContext";
 import ErrorNotice from "../../components/misc/ErrorNotice";
@@ -38,25 +38,25 @@ function Register () {
                         <label>Name</label>
                         <input type="text" className="form-control" placeholder="Display name" id="dsplay-name" onChange={e => setDisplayName(e.target.value)}/>
                     </div>
-
+                    <p></p>    
                     <div className="form-group">
                         <label>Email address</label>
                         <input type="email" className="form-control" placeholder="Enter email" id="email" onChange={e => setEmail(e.target.value)}/>
                     </div>
-
+                    <p></p>
                     <div className="form-group">
                         <label>Password</label>
                         <input type="password" className="form-control" placeholder="Enter password" id="password" onChange={e => setPassword(e.target.value)}/>
                     </div>
-
+                    <p></p>
                     <div className="form-group">
                         <label>Confirm Password</label>
                         <input type="password" className="form-control" placeholder="Enter password" onChange={e => setPasswordCheck(e.target.value)}/>
                     </div>
-
+                    <p></p>
                     <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
                     <p className="forgot-password text-right">
-                        Already registered ? Sign In
+                        Already registered ? <Link to="/login">Log In</Link>
                     </p>
                 </form>
                 {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />}
